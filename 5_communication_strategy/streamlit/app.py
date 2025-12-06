@@ -230,11 +230,11 @@ def load_models():
     """Load all trained models and feature lists"""
     try:
         models = {
-            "high_risk": joblib.load("../models/model_high_risk.pkl"),
-            "detox_los": joblib.load("../models/asclepios_los_detox.pkl"),
-            "rehab_los": joblib.load("../models/asclepios_los_rehab.pkl"),
-            "features_high_risk": joblib.load("../models/model_features_high_risk.pkl"),
-            "features_los": joblib.load("../models/model_features_los.pkl"),
+            "high_risk": joblib.load("./models/model_high_risk.pkl"),
+            "detox_los": joblib.load("./models/asclepios_los_detox.pkl"),
+            "rehab_los": joblib.load("./models/asclepios_los_rehab.pkl"),
+            "features_high_risk": joblib.load("./models/model_features_high_risk.pkl"),
+            "features_los": joblib.load("./models/model_features_los.pkl"),
         }
         return models
     except Exception as e:
