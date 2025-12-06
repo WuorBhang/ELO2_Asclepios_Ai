@@ -973,28 +973,28 @@ def render_prediction_interface(models):
             except Exception as e:
                 st.error(f"Prediction error: {e}")
 
-    # Sample patients section
-    st.markdown("---")
-    st.markdown(
-        '<h3 class="sub-header">🎯 Quick Test Profiles</h3>', unsafe_allow_html=True
-    )
+    # # Sample patients section
+    # st.markdown("---")
+    # st.markdown(
+    #     '<h3 class="sub-header">🎯 Quick Test Profiles</h3>', unsafe_allow_html=True
+    # )
 
-    col1, col2, col3 = st.columns(3)
+    # col1, col2, col3 = st.columns(3)
 
-    with col1:
-        if st.button("👤 Young Opioid User", use_container_width=True):
-            st.session_state["sample"] = "A"
-            st.rerun()
+    # with col1:
+    #     if st.button("👤 Young Opioid User", use_container_width=True):
+    #         st.session_state["sample"] = "A"
+    #         st.rerun()
 
-    with col2:
-        if st.button("👤 Middle-Aged Alcohol User", use_container_width=True):
-            st.session_state["sample"] = "B"
-            st.rerun()
+    # with col2:
+    #     if st.button("👤 Middle-Aged Alcohol User", use_container_width=True):
+    #         st.session_state["sample"] = "B"
+    #         st.rerun()
 
-    with col3:
-        if st.button("👤 Polysubstance with Legal Mandate", use_container_width=True):
-            st.session_state["sample"] = "C"
-            st.rerun()
+    # with col3:
+    #     if st.button("👤 Polysubstance with Legal Mandate", use_container_width=True):
+    #         st.session_state["sample"] = "C"
+    #         st.rerun()
 
 
 def render_model_insights(models):
@@ -1008,15 +1008,15 @@ def render_model_insights(models):
     col1, col2, col3 = st.columns(3)
 
     with col1:
-        st.markdown('<div class="info-card">', unsafe_allow_html=True)
+        st.markdown('<div class="">', unsafe_allow_html=True)
         st.markdown("##### 🤖 High Risk Model")
         st.markdown("**AUC-ROC:** 0.75")
-        st.markdown("**Accuracy:** 85%")
+        st.markdown("**Accuracy:** 75%")
         st.markdown("**Trained on:** 1.3M records")
         st.markdown("</div>", unsafe_allow_html=True)
 
     with col2:
-        st.markdown('<div class="info-card">', unsafe_allow_html=True)
+        st.markdown('<div class="">', unsafe_allow_html=True)
         st.markdown("##### ⏱️ Detox LOS Model")
         st.markdown("**MAE:** 3.6 days")
         st.markdown("**R²:** 0.85")
@@ -1024,7 +1024,7 @@ def render_model_insights(models):
         st.markdown("</div>", unsafe_allow_html=True)
 
     with col3:
-        st.markdown('<div class="info-card">', unsafe_allow_html=True)
+        st.markdown('<div class="">', unsafe_allow_html=True)
         st.markdown("##### 🏠 Rehab LOS Model")
         st.markdown("**MAE:** 6.7 days")
         st.markdown("**R²:** 0.82")
@@ -1210,9 +1210,7 @@ def render_about_page():
         """)
 
     with col2:
-        st.markdown(
-            '<div class="info-card" style="margin-top: 0;">', unsafe_allow_html=True
-        )
+        st.markdown('<div class="" style="margin-top: 0;">', unsafe_allow_html=True)
         st.markdown("##### 📊 Model Specifications")
 
         st.markdown("""
@@ -1236,7 +1234,7 @@ def render_about_page():
 
         st.markdown("</div>", unsafe_allow_html=True)
 
-        st.markdown('<div class="info-card">', unsafe_allow_html=True)
+        st.markdown('<div class="">', unsafe_allow_html=True)
         st.markdown("##### 🔧 Technical Stack")
 
         st.markdown("""
@@ -1258,16 +1256,19 @@ def render_about_page():
 
         st.markdown("</div>", unsafe_allow_html=True)
 
-        st.markdown('<div class="info-card">', unsafe_allow_html=True)
+        st.markdown('<div class="">', unsafe_allow_html=True)
         st.markdown("##### 📞 Support & Contact")
 
         st.markdown("""
-        For technical support or research inquiries:
+        This project is being developed by a collaborative team:
         
-        **Email**: support@asclepios.ai
-        **Documentation**: docs.asclepios.ai
-        **Updates**: GitHub repository
-        
+                *OUR TEAM IS READY TO HELP YOU!*
+
+                    Caesar Ghazi
+                    Moe Alwathiq
+                    Rafaa Ali
+                    Wuor Bhang
+                    
         **Citation Request**:  
         Please cite when used for research
         """)
