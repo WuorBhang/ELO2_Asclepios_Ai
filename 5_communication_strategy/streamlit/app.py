@@ -1,7 +1,10 @@
+import os
+
 import joblib
 import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
+from config import MODELS_DIR
 
 # Set page configuration with your theme
 st.set_page_config(
@@ -227,14 +230,21 @@ st.markdown(
 # Load models and feature lists
 @st.cache_resource
 def load_models():
-    """Load all trained models and feature lists"""
     try:
         models = {
-            "high_risk": joblib.load("./models/model_high_risk.pkl"),
-            "detox_los": joblib.load("./models/asclepios_los_detox.pkl"),
-            "rehab_los": joblib.load("./models/asclepios_los_rehab.pkl"),
-            "features_high_risk": joblib.load("./models/model_features_high_risk.pkl"),
-            "features_los": joblib.load("./models/model_features_los.pkl"),
+            "high_risk": joblib.load(os.path.join(MODELS_DIR, "model_high_risk.pkl")),
+            "detox_los": joblib.load(
+                os.path.join(MODELS_DIR, "asclepios_los_detox.pkl")
+            ),
+            "rehab_los": joblib.load(
+                os.path.join(MODELS_DIR, "asclepios_los_rehab.pkl")
+            ),
+            "features_high_risk": joblib.load(
+                os.path.join(MODELS_DIR, "model_features_high_risk.pkl")
+            ),
+            "features_los": joblib.load(
+                os.path.join(MODELS_DIR, "model_features_los.pkl")
+            ),
         }
         return models
     except Exception as e:
