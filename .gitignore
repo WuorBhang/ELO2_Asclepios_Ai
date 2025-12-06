@@ -1,0 +1,12 @@
+__pycache__
+*.pytest_cache
+venv/
+# .env
+*.db
+*.idea
+*.ruff_cache
+#raw data
+.1_datasets/raw/tedsd_puf_2023.csv
+# processed data
+.1_datasets/processed/tedsd_ml_clean.csv
+.1_datasets/processed/tedsd_engineered_features.csv
