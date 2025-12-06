@@ -551,23 +551,22 @@ def render_prediction_interface(models):
                 format_func=lambda x: [
                     "📚 < kindergarten",
                     "📚 Prim sch",
-                    "📚 High sch",
                     "📚 Some High Sch",
-                    "🎓 Grad",
+                    "📚 High sch Grad",
                     "🎓 Some College",
+                    "🎓 College Grad",
                     "🎓 College+",
                 ][x - 1],
             )
             marital = st.selectbox(
                 "**Marital Status**",
-                options=[1, 2, 3, 4, 5, 6],
+                options=[1, 2, 3, 4, 5],
                 format_func=lambda x: [
                     "💔 Never Married",
                     "💑 Now Married",
                     "🚪 Separated",
                     "💔 Divorced",
                     "⚰️ Widowed",
-                    "❓ Unknown",
                 ][x - 1],
             )
 
