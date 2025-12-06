@@ -64,7 +64,7 @@ st.markdown(
     }
     
     /* Cards and containers */
-    .prediction-card {
+    . {
         background: linear-gradient(135deg, #FFFFFF 0%, #FFF9F7 100%);
         padding: 2rem;
         border-radius: 20px;
@@ -74,7 +74,7 @@ st.markdown(
         transition: transform 0.3s ease;
     }
     
-    .prediction-card:hover {
+    .:hover {
         transform: translateY(-5px);
         box-shadow: 0 15px 40px rgba(26, 42, 79, 0.12);
     }
@@ -488,7 +488,7 @@ def main():
         <div class='info-card' style='margin: 2rem 0;'>
             <h4 style='color: #1A2A4F; margin-bottom: 0.5rem;'>⚡ Quick Stats</h4>
             <p style='color: #666; font-size: 0.9rem; margin-bottom: 0.2rem;'>• 1.4M+ patient records</p>
-            <p style='color: #666; font-size: 0.9rem; margin-bottom: 0.2rem;'>• 85% prediction accuracy</p>
+            <p style='color: #666; font-size: 0.9rem; margin-bottom: 0.2rem;'>• 75% prediction accuracy</p>
             <p style='color: #666; font-size: 0.9rem;'>• Real-time recommendations</p>
         </div>
     """,
@@ -547,11 +547,13 @@ def render_prediction_interface(models):
             st.markdown("##### 🎓 Education & Status")
             education = st.selectbox(
                 "**Education Level**",
-                options=[1, 2, 3, 4, 5],
+                options=[1, 2, 3, 4, 5, 6, 7],
                 format_func=lambda x: [
-                    "📚 < HS",
-                    "📚 Some HS",
-                    "🎓 HS Grad",
+                    "📚 < kindergarten",
+                    "📚 Prim sch",
+                    "📚 High sch",
+                    "📚 Some High Sch",
+                    "🎓 Grad",
                     "🎓 Some College",
                     "🎓 College+",
                 ][x - 1],
@@ -776,7 +778,7 @@ def render_prediction_interface(models):
                     los_model = "Rehab"
 
                 # Display results in cards
-                st.markdown('<div class="prediction-card">', unsafe_allow_html=True)
+                st.markdown('<div class="">', unsafe_allow_html=True)
 
                 # Risk Assessment with gauge
                 st.markdown("### 📊 Risk Assessment")
@@ -832,7 +834,7 @@ def render_prediction_interface(models):
                 st.markdown("</div>", unsafe_allow_html=True)
 
                 # Treatment Duration Card
-                st.markdown('<div class="prediction-card">', unsafe_allow_html=True)
+                st.markdown('<div class="">', unsafe_allow_html=True)
                 st.markdown("### ⏱️ Treatment Duration Recommendation")
 
                 # Create timeline visualization
@@ -885,7 +887,7 @@ def render_prediction_interface(models):
                 st.markdown("</div>", unsafe_allow_html=True)
 
                 # Clinical Insights Card
-                st.markdown('<div class="prediction-card">', unsafe_allow_html=True)
+                st.markdown('<div class="">', unsafe_allow_html=True)
                 st.markdown("### 💡 Clinical Insights & Recommendations")
 
                 insights = []
@@ -927,7 +929,7 @@ def render_prediction_interface(models):
                 st.markdown("</div>", unsafe_allow_html=True)
 
                 # Feature Importance Visualization
-                st.markdown('<div class="prediction-card">', unsafe_allow_html=True)
+                st.markdown('<div class="">', unsafe_allow_html=True)
                 st.markdown("### 📈 Top Influencing Factors")
 
                 # Create feature importance visualization
@@ -1030,7 +1032,7 @@ def render_model_insights(models):
         st.markdown("</div>", unsafe_allow_html=True)
 
     # Feature importance visualization
-    st.markdown('<div class="prediction-card">', unsafe_allow_html=True)
+    st.markdown('<div class="">', unsafe_allow_html=True)
     st.markdown("### 📊 Feature Importance Analysis")
 
     tab1, tab2, tab3 = st.tabs(["🚨 High Risk Model", "⚡ Detox LOS", "🏠 Rehab LOS"])
@@ -1165,7 +1167,7 @@ def render_about_page():
         unsafe_allow_html=True,
     )
 
-    st.markdown('<div class="prediction-card">', unsafe_allow_html=True)
+    st.markdown('<div class="">', unsafe_allow_html=True)
 
     col1, col2 = st.columns([3, 2])
 
