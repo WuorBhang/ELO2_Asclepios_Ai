@@ -1,10 +1,31 @@
 import os
+import subprocess
+import sys
 
 import joblib
 import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 from config import MODELS_DIR
+
+# Check installed packages
+try:
+    result = subprocess.run(
+        [sys.executable, "-m", "pip", "list"], capture_output=True, text=True
+    )
+    # st.sidebar.code(result.stdout)
+except:
+    pass
+
+# Try to import xgboost
+try:
+    import xgboost
+
+    st.sidebar.success("✅ xgboost is installed")
+    st.sidebar.write(f"Version: {xgboost.__version__}")
+except ImportError as e:
+    st.sidebar.error(f"❌ xgboost not installed: {e}")
+
 
 # Set page configuration with your theme
 st.set_page_config(
