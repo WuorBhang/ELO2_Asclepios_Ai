@@ -549,8 +549,7 @@ def render_prediction_interface(models):
                 "**Education Level**",
                 options=[1, 2, 3, 4, 5, 6, 7],
                 format_func=lambda x: [
-                    "📚 < kindergarten",
-                    "📚 Prim sch",
+                    "📚 < Prim sch",
                     "📚 Some High Sch",
                     "📚 High sch Grad",
                     "🎓 Some College",
