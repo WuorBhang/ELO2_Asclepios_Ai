@@ -275,21 +275,49 @@ def load_models():
 
 # Mapping dictionaries (same as used in training)
 age_map = {
-    1: 13,
-    2: 16,
-    3: 19,
-    4: 22.5,
-    5: 27,
-    6: 32,
-    7: 37,
-    8: 42,
-    9: 47,
-    10: 52,
-    11: 60,
-    12: 70,
+    1: 13,   2: 14,   3: 15,   4: 16,   5: 17,
+    6: 18,   7: 19,   8: 20,   9: 21,  10: 22,
+   11: 23,  12: 24,  13: 25,  14: 26,  15: 27,
+   16: 28,  17: 29,  18: 30,  19: 31,  20: 32,
+   21: 33,  22: 34,  23: 35,  24: 36,  25: 37,
+   26: 38,  27: 39,  28: 40,  29: 41,  30: 42,
+   31: 43,  32: 44,  33: 45,  34: 46,  35: 47,
+   36: 48,  37: 49,  38: 50,  39: 51,  40: 52,
+   41: 53,  42: 54,  43: 55,  44: 56,  45: 57,
+   46: 58,  47: 59,  48: 60,  49: 61,  50: 62,
+   51: 63,  52: 64,  53: 65,  54: 66,  55: 67,
+   56: 68,  57: 69,  58: 70,  59: 71,  60: 72,
+   61: 73,  62: 74,  63: 75,  64: 76,  65: 77,
+   66: 78,  67: 79,  68: 80,  69: 81,  70: 82,
+   71: 83,  72: 84,  73: 85,  74: 86,  75: 87,
+   76: 88,  77: 89,  78: 90,  79: 91,  80: 92,
+   81: 93,  82: 94,  83: 95,  84: 96,  85: 97,
+   86: 98,  87: 99,  88: 100
 }
 
-first_use_map = {1: 11, 2: 13, 3: 16, 4: 19, 5: 22.5, 6: 27, 7: 35}
+first_use_map = {
+    1: 5,     # Very early onset (rare, but documented)
+    2: 8,     # Early childhood experimentation (e.g., inhalants, alcohol sips)
+    3: 11,    # Pre-adolescence (your original key 1 → preserved)
+    4: 13,    # Early adolescence (your original key 2)
+    5: 15,    # Mid-adolescence
+    6: 16,    # Late adolescence (your original key 3)
+    7: 18,    # Legal adulthood (alcohol/tobacco access)
+    8: 19,    # Emerging adulthood (your original key 4)
+    9: 21,    # Full legal access (US alcohol), typical college age
+    10: 22, # Young adulthood midpoint (your original key 5)
+    11: 25,   # Established adulthood
+    12: 27,   # Later young adult (your original key 6)
+    13: 30,   # Adult onset
+    14: 35,   # Middle adulthood (your original key 7)
+    15: 40,   # Later adult onset
+    16: 45,   # Midlife onset
+    17: 50,   # Late-onset (clinically relevant for certain substances)
+    18: 55,
+    19: 60,
+    20: 65,
+    21: 70,   # Upper bound for "first use" (extremely rare, but included)
+}
 
 substance_map = {
     2: "Alcohol",
@@ -533,13 +561,14 @@ def render_prediction_interface(models):
             )
             race = st.selectbox(
                 "**Race**",
-                options=[1, 2, 3, 4, 5],
+                options=[1, 2, 3, 4, 5, 6],
                 format_func=lambda x: [
                     "👤 White",
                     "👤 Black",
                     "👤 Native American",
                     "👤 Asian/Pacific",
-                    "👤 Other",
+                    "👤 Hispanic"
+                    "👤 Latinos:,
                 ][x - 1],
             )
 
@@ -670,7 +699,7 @@ def render_prediction_interface(models):
             )
             living_arrange = st.selectbox(
                 "**Living Arrangements**",
-                options=[1, 2, 3, 4, 5, 6, 7, 8],
+                options=[1, 2, 3, 4, 5, 6, 7],
                 format_func=lambda x: [
                     "🚪 Homeless",
                     "🏠 Dependent",
@@ -678,7 +707,6 @@ def render_prediction_interface(models):
                     "🏥 Psychiatric",
                     "🏛️ Institution",
                     "📋 Other",
-                    "❓ Unknown",
                     "❓ Unknown",
                 ][x - 1],
             )
