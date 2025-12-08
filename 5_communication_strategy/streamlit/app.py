@@ -567,8 +567,8 @@ def render_prediction_interface(models):
                     "👤 Black",
                     "👤 Native American",
                     "👤 Asian/Pacific",
-                    "👤 Hispanic"
-                    "👤 Latinos:,
+                    "👤 Hispanic",
+                    "👤 Latinos",
                 ][x - 1],
             )
 
