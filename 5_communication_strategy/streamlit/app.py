@@ -547,7 +547,7 @@ def render_prediction_interface(models):
             st.markdown("##### 🎓 Education & Status")
             education = st.selectbox(
                 "**Education Level**",
-                options=[1, 2, 3, 4, 5, 6, 7],
+                options=[1, 2, 3, 4, 5, 6],
                 format_func=lambda x: [
                     "📚 < Prim sch",
                     "📚 Some High Sch",
